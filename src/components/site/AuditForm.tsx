@@ -95,8 +95,8 @@ const AuditForm = () => {
     setSubmitting(true);
     const { error } = await supabase.from("audit_requests").insert({
       ...parsed.data,
-      current_system: parsed.data.current_system || null,
-      phone: parsed.data.phone || null,
+      current_system: parsed.data.current_system || undefined,
+      phone: parsed.data.phone || undefined,
     });
     setSubmitting(false);
     if (error) {
