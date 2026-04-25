@@ -93,11 +93,19 @@ const AuditForm = () => {
       return;
     }
     setSubmitting(true);
-    const { error } = await supabase.from("audit_requests").insert({
-      ...parsed.data,
-      current_system: parsed.data.current_system || undefined,
-      phone: parsed.data.phone || undefined,
-    });
+    const payload = {
+      company: parsed.data.company,
+      fleet_size: parsed.data.fleet_size,
+      vessel_types: parsed.data.vessel_types,
+      pain_points: parsed.data.pain_points,
+      timeline: parsed.data.timeline,
+      full_name: parsed.data.full_name,
+      role: parsed.data.role,
+      email: parsed.data.email,
+      ...(parsed.data.current_system ? { current_system: parsed.data.current_system } : {}),
+      ...(parsed.data.phone ? { phone: parsed.data.phone } : {}),
+    };
+    const { error } = await supabase.from("audit_requests").insert(payload);
     setSubmitting(false);
     if (error) {
       toast({ title: "Submission failed", description: error.message, variant: "destructive" });
