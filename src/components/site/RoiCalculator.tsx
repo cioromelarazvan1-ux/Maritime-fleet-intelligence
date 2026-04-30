@@ -11,8 +11,8 @@ const RoiCalculator = () => {
     const hours = fleet * 38;
     const dollars = hours * 65;
     const riskScore = Math.min(95, 30 + fleet * 1.4 + crew * 0.6);
-    const tier = riskScore > 75 ? "High" : riskScore > 55 ? "Medium" : "Notable";
-    return { hours, dollars, tier, riskScore };
+    const tierLabel = riskScore > 75 ? "High" : riskScore > 55 ? "Medium" : "Notable";
+    return { hours, dollars, tierLabel, riskScore };
   }, [fleet, crew]);
 
   return (
@@ -76,11 +76,17 @@ const RoiCalculator = () => {
             <Output icon={DollarSign} label="$ saved / month" value={`$${data.dollars.toLocaleString()}`} />
             <Output
               icon={ShieldCheck}
-              label="Detention risk reduction"
-              value={`${data.tier}`}
-              suffix={`· ↓ ${Math.round(data.riskScore)}%`}
+              label="Detention risk exposure"
+              value={`${data.tierLabel} → Reduced`}
+              suffix={`↓ ${Math.round(data.riskScore)}% with 888 AI`}
               accent
             />
+            <a
+              href="#audit"
+              className="mt-2 flex items-center justify-end gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+            >
+              See how we deliver this →
+            </a>
           </div>
         </motion.div>
       </div>

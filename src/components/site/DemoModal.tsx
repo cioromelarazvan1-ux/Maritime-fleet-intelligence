@@ -9,7 +9,7 @@ const DemoModal = ({ open, onOpenChange }: Props) => (
   <Dialog open={open} onOpenChange={onOpenChange}>
     <DialogContent className="max-w-3xl border-white/10 bg-card p-0">
       <DialogHeader className="px-6 pt-6">
-        <DialogTitle className="font-display">Thorne Maritime — Platform Walkthrough</DialogTitle>
+        <DialogTitle className="font-display">888 AI Systems — Platform Walkthrough</DialogTitle>
       </DialogHeader>
       <div className="aspect-video w-full overflow-hidden rounded-b-lg bg-black/40">
         <div className="grid h-full place-items-center text-center text-muted-foreground">

@@ -145,25 +145,39 @@ const AuditForm = () => {
               </div>
               <h3 className="font-display text-2xl font-semibold">Audit request received.</h3>
               <p className="mx-auto mt-2 max-w-md text-muted-foreground">
-                Captain Thorne and the team will reach out within one business day to schedule your 30-minute audit.
+                Razvan and the 888 AI Systems team will reach out within one business day to schedule your 30-minute audit.
               </p>
             </div>
           ) : (
             <>
               {/* Stepper */}
-              <div className="mb-8 flex items-center gap-2">
-                {[0, 1, 2].map((i) => (
-                  <div key={i} className="flex flex-1 items-center gap-2">
-                    <div
-                      className={`grid h-7 w-7 place-items-center rounded-full text-xs font-medium transition-colors ${
-                        i <= step ? "bg-primary text-primary-foreground" : "bg-white/5 text-muted-foreground"
-                      }`}
-                    >
-                      {i + 1}
+              <div className="mb-8">
+                <div className="flex items-center gap-2">
+                  {[0, 1, 2].map((i) => (
+                    <div key={i} className="flex flex-1 items-center gap-2">
+                      <div
+                        className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs font-medium transition-colors ${
+                          i <= step ? "bg-primary text-primary-foreground" : "bg-white/5 text-muted-foreground"
+                        }`}
+                      >
+                        {i + 1}
+                      </div>
+                      {i < 2 && <div className={`h-px flex-1 ${i < step ? "bg-primary" : "bg-white/10"}`} />}
                     </div>
-                    {i < 2 && <div className={`h-px flex-1 ${i < step ? "bg-primary" : "bg-white/10"}`} />}
-                  </div>
-                ))}
+                  ))}
+                </div>
+                <div className="mt-2 flex">
+                  {["About your fleet", "Your challenges", "Your details"].map((label, i) => (
+                    <div
+                      key={label}
+                      className={`flex-1 text-[11px] transition-colors ${
+                        i === step ? "text-primary font-medium" : "text-muted-foreground/60"
+                      } ${i === 0 ? "text-left" : i === 2 ? "text-right" : "text-center"}`}
+                    >
+                      {label}
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <AnimatePresence mode="wait">
@@ -268,37 +282,42 @@ const AuditForm = () => {
                 </motion.div>
               </AnimatePresence>
 
-              <div className="mt-8 flex items-center justify-between">
-                <Button
-                  variant="ghost"
-                  disabled={step === 0}
-                  onClick={() => setStep((s) => Math.max(0, s - 1))}
-                  className="text-muted-foreground hover:bg-white/5"
-                >
-                  <ArrowLeft className="mr-1 h-4 w-4" /> Back
-                </Button>
-                {step < 2 ? (
+              <div className="mt-8 space-y-3">
+                <p className="text-center text-[11px] text-muted-foreground/60">
+                  🔒 We never share your data. No sales calls without your consent.
+                </p>
+                <div className="flex items-center justify-between">
                   <Button
-                    onClick={() => validateStep() && setStep((s) => s + 1)}
-                    className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 glow-cyan"
+                    variant="ghost"
+                    disabled={step === 0}
+                    onClick={() => setStep((s) => Math.max(0, s - 1))}
+                    className="text-muted-foreground hover:bg-white/5"
                   >
-                    Continue <ArrowRight className="ml-1 h-4 w-4" />
+                    <ArrowLeft className="mr-1 h-4 w-4" /> Back
                   </Button>
-                ) : (
-                  <Button
-                    onClick={submit}
-                    disabled={submitting}
-                    className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 glow-cyan"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className="mr-1 h-4 w-4 animate-spin" /> Submitting…
-                      </>
-                    ) : (
-                      <>Submit request</>
-                    )}
-                  </Button>
-                )}
+                  {step < 2 ? (
+                    <Button
+                      onClick={() => validateStep() && setStep((s) => s + 1)}
+                      className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 glow-cyan"
+                    >
+                      Continue <ArrowRight className="ml-1 h-4 w-4" />
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={submit}
+                      disabled={submitting}
+                      className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 glow-cyan"
+                    >
+                      {submitting ? (
+                        <>
+                          <Loader2 className="mr-1 h-4 w-4 animate-spin" /> Submitting…
+                        </>
+                      ) : (
+                        <>Consult with the Chief</>
+                      )}
+                    </Button>
+                  )}
+                </div>
               </div>
             </>
           )}

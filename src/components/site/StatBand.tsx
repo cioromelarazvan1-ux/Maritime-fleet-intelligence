@@ -23,16 +23,23 @@ const StatBand = () => (
             {[
               { v: 38, suffix: "h", l: "Saved / vessel / month" },
               { v: 99.4, suffix: "%", decimals: 1, l: "Cert capture accuracy" },
-              { v: 0, suffix: "", l: "Detentions in pilot fleet" },
+              { v: null, suffix: "", l: "Detentions in pilot fleet" },
             ].map((m) => (
               <div key={m.l}>
                 <div className="font-display text-2xl font-semibold text-foreground md:text-3xl">
-                  <CountUp to={m.v} suffix={m.suffix} decimals={m.decimals ?? 0} />
+                  {m.v !== null ? (
+                    <CountUp to={m.v} suffix={m.suffix} decimals={m.decimals ?? 0} />
+                  ) : (
+                    <span className="text-success">Zero ✓</span>
+                  )}
                 </div>
                 <div className="mt-1 text-xs text-muted-foreground">{m.l}</div>
               </div>
             ))}
           </div>
+          <p className="mt-6 text-[11px] text-muted-foreground/50">
+            Pilot fleet results · 2024 · Based on 12 vessels over 9 months
+          </p>
         </div>
       </motion.div>
     </div>

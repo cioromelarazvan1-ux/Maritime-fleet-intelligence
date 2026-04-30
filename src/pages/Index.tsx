@@ -4,17 +4,17 @@ import Hero from "@/components/site/Hero";
 import TrustStrip from "@/components/site/TrustStrip";
 import StatBand from "@/components/site/StatBand";
 import BentoGrid from "@/components/site/BentoGrid";
-import CostOfInaction from "@/components/site/CostOfInaction";
-import RoiCalculator from "@/components/site/RoiCalculator";
+import RecruitmentFunnel from "@/components/site/RecruitmentFunnel";
 import Founder from "@/components/site/Founder";
+import StrategicGap from "@/components/site/StrategicGap";
 import FAQ from "@/components/site/FAQ";
-import AuditForm from "@/components/site/AuditForm";
+import Consultancy from "@/components/site/Consultancy";
 import Footer from "@/components/site/Footer";
 import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Thorne Maritime — Automated STCW & MLC 2006 Compliance for Fleets";
+    document.title = "888 AI Systems — Agentic AI for Crew Complement, CV Parsing & STCW Compliance";
     const setMeta = (name: string, content: string) => {
       let tag = document.querySelector(`meta[name="${name}"]`);
       if (!tag) {
@@ -26,7 +26,7 @@ const Index = () => {
     };
     setMeta(
       "description",
-      "Agentic AI for crewing & manning. Cut manual entry 92%, eliminate PSC detentions, and stay STCW/MLC 2006 compliant across your fleet.",
+      "888 AI Systems: Agentic AI designed by a Chief Engineer to automate Crew Complement optimization, CV parsing, and 100% STCW compliance across your fleet.",
     );
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -46,11 +46,11 @@ const Index = () => {
         <TrustStrip />
         <StatBand />
         <BentoGrid />
-        <CostOfInaction />
-        <RoiCalculator />
+        <RecruitmentFunnel />
         <Founder />
+        <StrategicGap />
         <FAQ />
-        <AuditForm />
+        <Consultancy />
       </main>
       <Footer />
     </>

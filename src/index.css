@@ -4,66 +4,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Thorne Maritime — Glassmorphic deep-purple design system. All colors HSL. */
+/* 888 AI Systems — Glassmorphic deep-purple design system. All colors HSL. */
 
 @layer base {
   :root {
     /* Surfaces */
-    --background: 264 80% 6%;
-    --foreground: 0 0% 100%;
+    --background: 216 65% 11%;
+    --foreground: 214 100% 95%;
 
-    --card: 264 50% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 218 58% 16%;
+    --card-foreground: 214 100% 95%;
 
-    --popover: 264 50% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 218 58% 16%;
+    --popover-foreground: 214 100% 95%;
 
     /* Brand */
-    --primary: 187 100% 50%;            /* Electric cyan #00E5FF */
-    --primary-foreground: 264 80% 6%;
-    --primary-glow: 187 100% 65%;
+    --primary: 191 100% 50%;            /* Teal #00D1FF */
+    --primary-foreground: 216 65% 11%;
+    --primary-glow: 191 100% 65%;
 
-    --secondary: 258 90% 76%;           /* Lavender #A78BFA */
-    --secondary-foreground: 264 80% 6%;
+    --secondary: 214 40% 70%;
+    --secondary-foreground: 216 65% 11%;
 
-    --accent: 187 100% 50%;
-    --accent-foreground: 264 80% 6%;
+    --accent: 191 100% 50%;
+    --accent-foreground: 216 65% 11%;
 
     --success: 160 84% 39%;             /* Emerald #10B981 */
     --success-foreground: 0 0% 100%;
 
     --warning: 36 100% 64%;             /* Amber */
-    --warning-foreground: 264 80% 6%;
+    --warning-foreground: 216 65% 11%;
 
-    --muted: 264 30% 18%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 218 58% 22%;
+    --muted-foreground: 214 40% 70%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 264 30% 22%;
-    --input: 264 30% 18%;
-    --ring: 187 100% 50%;
+    --border: 218 58% 26%;
+    --input: 218 58% 22%;
+    --ring: 191 100% 50%;
 
     --radius: 1rem;
 
     /* Glass surfaces */
-    --glass-bg: 255 100% 100% / 0.04;
+    --glass-bg: 218 58% 16% / 0.4;
     --glass-border: 255 100% 100% / 0.10;
-    --glass-bg-strong: 255 100% 100% / 0.08;
+    --glass-bg-strong: 218 58% 16% / 0.7;
 
     /* Gradients */
-    --gradient-bg: radial-gradient(ellipse at 20% 0%, hsl(264 80% 18%) 0%, hsl(264 80% 6%) 50%, hsl(270 90% 4%) 100%);
-    --gradient-cyan: linear-gradient(135deg, hsl(187 100% 50%), hsl(258 90% 76%));
-    --gradient-lavender-cyan: linear-gradient(90deg, hsl(258 90% 76%), hsl(187 100% 50%));
-    --gradient-lavender-emerald: linear-gradient(90deg, hsl(258 90% 76%), hsl(160 84% 39%));
-    --gradient-text: linear-gradient(180deg, hsl(0 0% 100%), hsl(258 90% 80%));
+    --gradient-bg: radial-gradient(ellipse at 20% 0%, hsl(218 58% 16%) 0%, hsl(216 65% 11%) 50%, hsl(216 70% 8%) 100%);
+    --gradient-cyan: linear-gradient(135deg, hsl(191 100% 50%), hsl(214 100% 85%));
+    --gradient-lavender-cyan: linear-gradient(90deg, hsl(214 40% 70%), hsl(191 100% 50%));
+    --gradient-lavender-emerald: linear-gradient(90deg, hsl(214 40% 70%), hsl(160 84% 39%));
+    --gradient-text: linear-gradient(180deg, hsl(214 100% 95%), hsl(214 40% 75%));
+    
+    --gradient-text: linear-gradient(180deg, hsl(214 100% 95%), hsl(214 40% 75%));
 
-    /* Shadows / glows */
-    --glow-cyan: 0 0 40px hsl(187 100% 50% / 0.35);
-    --glow-lavender: 0 0 40px hsl(258 90% 76% / 0.35);
-    --glow-emerald: 0 0 40px hsl(160 84% 39% / 0.35);
-    --shadow-glass: 0 8px 32px 0 hsl(264 90% 4% / 0.5);
+    /* Shadows / glows — OLED dashboard aesthetics */
+    --glow-cyan: 0 0 25px 2px hsl(191 100% 50% / 0.4), 0 0 50px 5px hsl(191 100% 50% / 0.15);
+    --glow-lavender: 0 0 25px 2px hsl(214 40% 70% / 0.4), 0 0 50px 5px hsl(214 40% 70% / 0.15);
+    --glow-emerald: 0 0 25px 2px hsl(160 84% 39% / 0.4), 0 0 50px 5px hsl(160 84% 39% / 0.15);
+    --shadow-glass: 0 8px 32px 0 hsl(216 70% 6% / 0.5);
 
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -126,6 +128,18 @@
   .glow-cyan { box-shadow: var(--glow-cyan); }
   .glow-lavender { box-shadow: var(--glow-lavender); }
   .glow-emerald { box-shadow: var(--glow-emerald); }
+
+  /* Cyan text glow — used on hero 'Zero Detentions' headline */
+  .text-glow-cyan {
+    text-shadow:
+      0 0 12px hsl(187 100% 60% / 0.4),
+      0 0 32px hsl(187 100% 50% / 0.2);
+  }
+
+  /* Radar / Sonar pulse — used on primary hero button */
+  .pulse-cta {
+    animation: pulse-radar 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
 }
 
 @layer utilities {
@@ -134,13 +148,103 @@
   }
 }
 
-/* Background orb animation */
+/* Background orb animation — slowed for high-end feel */
 @keyframes orb-drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -40px) scale(1.05); }
-  66% { transform: translate(-20px, 30px) scale(0.95); }
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  33% { transform: translate(30px, -40px) scale(1.05); opacity: 0.4; }
+  66% { transform: translate(-20px, 30px) scale(0.95); opacity: 0.25; }
 }
-.orb-drift { animation: orb-drift 20s ease-in-out infinite; }
+.orb-drift { animation: orb-drift 12s ease-in-out infinite; }
+
+/* Generative Topographic Waves */
+@keyframes wave-flow {
+  0% { transform: translateX(0) skewY(-2deg); }
+  50% { transform: translateX(-5%) skewY(1deg); }
+  100% { transform: translateX(0) skewY(-2deg); }
+}
+
+.topo-wave {
+  position: absolute;
+  bottom: 0;
+  left: -25%;
+  width: 150%;
+  height: 25%;
+  min-height: 200px;
+  @media (max-width: 768px) {
+    height: 15%;
+    min-height: 120px;
+  }
+  border-top: 1px solid hsl(191 100% 50% / 0.08);
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+  z-index: -1;
+  animation: wave-flow 20s ease-in-out infinite;
+}
+
+.topo-wave:nth-child(2) { 
+  min-height: 220px; 
+  @media (max-width: 768px) { min-height: 140px; }
+  animation-duration: 25s; animation-delay: -2s; opacity: 0.06; 
+}
+.topo-wave:nth-child(3) { 
+  min-height: 250px; 
+  @media (max-width: 768px) { min-height: 160px; }
+  animation-duration: 30s; animation-delay: -5s; opacity: 0.04; 
+}
+.topo-wave:nth-child(4) { 
+  min-height: 180px; 
+  @media (max-width: 768px) { min-height: 100px; }
+  animation-duration: 22s; animation-delay: -8s; opacity: 0.08; 
+}
+
+/* Navigation Intercepts — Re-tuned for wave integration */
+.vector-line {
+  position: fixed;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(191 100% 50% / 0.1), transparent);
+  width: 150%;
+  left: -25%;
+  pointer-events: none;
+  z-index: -4;
+}
+
+/* Light Vignette — Focuses the eye */
+.bg-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background: radial-gradient(circle, transparent 40%, hsl(216 70% 6% / 0.4) 100%);
+}
+
+/* Micro-Grain Noise Layer */
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Radar / Sonar pulse — expands / fades the shadow ring with a technical "ping" feel */
+@keyframes pulse-radar {
+  0% {
+    box-shadow:
+      0 0 0 0 hsl(191 100% 50% / 0.7),
+      0 0 0 0 hsl(191 100% 50% / 0.3);
+  }
+  70% {
+    box-shadow:
+      0 0 0 15px hsl(191 100% 50% / 0),
+      0 0 0 30px hsl(191 100% 50% / 0);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 hsl(191 100% 50% / 0),
+      0 0 0 0 hsl(191 100% 50% / 0);
+  }
+}
 
 @keyframes shimmer {
   0% { background-position: -200% 0; }
@@ -153,6 +257,18 @@
     hsl(var(--muted)) 100%);
   background-size: 200% 100%;
   animation: shimmer 1.4s linear infinite;
+}
+
+/* TrustStrip infinite marquee */
+@keyframes trust-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.trust-marquee {
+  animation: trust-marquee 28s linear infinite;
+}
+.trust-marquee:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
