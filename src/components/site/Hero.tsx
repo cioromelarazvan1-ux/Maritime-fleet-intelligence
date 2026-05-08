@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Play, ShieldCheck } from "lucide-react";
+import { ArrowRight, ChevronDown, Cog, Play, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import DemoModal from "./DemoModal";
@@ -49,11 +49,10 @@ const Hero = () => {
             The AI operating layer for maritime fleet management — starting with crew compliance, built for everything beyond it.
           </p>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base text-slate-300">
-            Built from the engine room up — by a{" "}
-            <span className="uppercase tracking-wider text-xs font-semibold text-slate-300">Staff Chief Engineer</span>
-            , not a software vendor.
-          </p>
+          <div className="mx-auto mt-6 flex max-w-2xl items-center justify-center gap-2 text-base text-slate-200">
+            <Cog className="h-4 w-4 shrink-0 opacity-70" />
+            <span>Built from the engine room up — by a Staff Chief Engineer, not a software vendor.</span>
+          </div>
 
           <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
