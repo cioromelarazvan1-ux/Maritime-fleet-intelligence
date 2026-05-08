@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import CountUp from "./CountUp";
 import { useSectionTracking } from "@/hooks/useSectionTracking";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
