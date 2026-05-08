@@ -49,8 +49,10 @@ const Hero = () => {
             The AI operating layer for maritime fleet management — starting with crew compliance, built for everything beyond it.
           </p>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm text-slate-400">
-            Built from the engine room up — by a Staff Chief Engineer, not a software vendor.
+          <p className="mx-auto mt-6 max-w-2xl text-base text-slate-300">
+            Built from the engine room up — by a{" "}
+            <span className="text-cyan-400 font-semibold">Staff Chief Engineer</span>
+            , not a software vendor.
           </p>
 
           <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
