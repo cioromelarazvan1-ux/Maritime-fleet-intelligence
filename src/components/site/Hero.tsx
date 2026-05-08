@@ -4,25 +4,25 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import DemoModal from "./DemoModal";
 import CountUp from "./CountUp";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import { trackEvent } from "@/lib/analytics";
+import { useSectionTracking } from "@/hooks/useSectionTracking";
 
 const Hero = () => {
   const [open, setOpen] = useState(false);
+  const sectionRef = useSectionTracking("hero");
 
   return (
-    <section id="top" className="relative py-20 md:pt-28 md:pb-32">
+    <section ref={sectionRef} id="home" className="relative pt-20 pb-16 md:pt-24 md:pb-24">
       <div className="container-narrow">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto max-w-4xl text-center"
-        >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            Agentic AI for Crewing, Crew Complement &amp; STCW Compliance
-          </div>
+        <RevealOnScroll delay={0} direction="up">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-primary/10 px-3 py-1 text-xs font-medium tracking-widest uppercase text-cyan-400">
+              <ShieldCheck className="h-3.5 w-3.5" />
+              Agentic AI for Crewing, Crew Complement &amp; STCW Compliance
+            </div>
 
-          <h1 className="relative font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl overflow-hidden py-2">
+            <h1 className="relative font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl overflow-hidden py-2">
             <span className="text-white">The Maritime Industry’s</span>
             <br />
             <span className="text-gradient-cyan text-glow-cyan">Fleet Intelligence Layer.</span>
@@ -47,19 +47,34 @@ const Hero = () => {
           </h1>
 
           <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-xl">
-            Moving beyond legacy manning. Agentic AI built to navigate the regulatory and operational complexity of the modern ocean.
+            The AI operating layer for maritime fleet management — starting with crew compliance, built for everything beyond it.
           </p>
 
-          <div className="mt-14 flex flex-col items-center justify-center">
+          <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               variant="default"
               size="lg"
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                setOpen(true);
+                trackEvent("hero_cta_clicked", { button: "see_how_it_works" });
+              }}
               className="group rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 font-medium glow-cyan pulse-cta transition-all hover:scale-105"
             >
               <Play className="mr-2 h-5 w-5 fill-current transition-transform group-hover:scale-110" />
-              Explore System
+              See How It Works
             </Button>
+            <a
+            href="#contact" 
+              
+              className="text-white/70 font-medium hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+              onClick={(e) => { 
+  e.preventDefault();
+  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  trackEvent("hero_cta_clicked", { button: "book_a_demo" });
+}}
+            >
+             Book a Demo <span className="text-cyan-400 group-hover:translate-x-1 transition-transform duration-200">➜</span> 
+            </a>
           </div>
 
           {/* Live metric strip — CountUp animated */}
@@ -70,8 +85,8 @@ const Hero = () => {
             className="glass mx-auto mt-16 grid max-w-3xl grid-cols-3 divide-x divide-white/10 rounded-2xl p-5"
           >
             {[
-              { to: 92, suffix: "%", prefix: "", label: "Cognitive Load Reduction" },
-              { to: 38, suffix: "h",  prefix: "", label: "Response Acceleration" },
+              { to: 92, suffix: "%", prefix: "", label: "Reduction in manual compliance checks" },
+              { to: 38, suffix: "h",  prefix: "", label: "Hours saved per crew rotation" },
               { to: 50, suffix: "k+", prefix: "$", label: "Avg detention avoided" },
             ].map((m) => (
               <div key={m.label} className="px-4 text-center first:pl-0 last:pr-0">
@@ -82,7 +97,8 @@ const Hero = () => {
               </div>
             ))}
           </motion.div>
-        </motion.div>
+        </div>
+      </RevealOnScroll>
 
         {/* Scroll cue */}
         <motion.div

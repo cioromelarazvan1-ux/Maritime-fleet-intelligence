@@ -72,16 +72,25 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
   * {
+    @apply antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
+  *:focus-visible {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   body {
-    @apply text-foreground antialiased;
+    @apply bg-background text-foreground antialiased;
     background: var(--gradient-bg);
     background-attachment: fixed;
     font-family: 'Inter', system-ui, sans-serif;
@@ -174,7 +183,7 @@
     height: 15%;
     min-height: 120px;
   }
-  border-top: 1px solid hsl(191 100% 50% / 0.08);
+  border-top: 1px solid rgba(0, 209, 255, 0.15);
   border-radius: 50% 50% 0 0;
   pointer-events: none;
   z-index: -1;
@@ -184,24 +193,24 @@
 .topo-wave:nth-child(2) { 
   min-height: 220px; 
   @media (max-width: 768px) { min-height: 140px; }
-  animation-duration: 25s; animation-delay: -2s; opacity: 0.06; 
+  animation-duration: 25s; animation-delay: -2s; opacity: 0.8; 
 }
 .topo-wave:nth-child(3) { 
   min-height: 250px; 
   @media (max-width: 768px) { min-height: 160px; }
-  animation-duration: 30s; animation-delay: -5s; opacity: 0.04; 
+  animation-duration: 30s; animation-delay: -5s; opacity: 0.5; 
 }
 .topo-wave:nth-child(4) { 
   min-height: 180px; 
   @media (max-width: 768px) { min-height: 100px; }
-  animation-duration: 22s; animation-delay: -8s; opacity: 0.08; 
+  animation-duration: 22s; animation-delay: -8s; opacity: 1; 
 }
 
 /* Navigation Intercepts — Re-tuned for wave integration */
 .vector-line {
   position: fixed;
   height: 1px;
-  background: linear-gradient(90deg, transparent, hsl(191 100% 50% / 0.1), transparent);
+  background: linear-gradient(90deg, transparent, hsl(191 100% 50% / 0.18), transparent);
   width: 150%;
   left: -25%;
   pointer-events: none;

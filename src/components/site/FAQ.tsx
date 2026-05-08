@@ -1,20 +1,23 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { trackEvent } from "@/lib/analytics";
+import { useSectionTracking } from "@/hooks/useSectionTracking";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const faqs = [
   {
-    q: "How much time will my HCI team actually save?",
+    q: "How much time will my crewing team actually save?",
     a: [
       "Automates CV parsing and certificate verification.",
-      "Reduces manual administrative tasks by up to 80%.",
+      "Reduces manual administrative tasks by up to 80% — based on pilot fleet benchmarks.",
       "Shifts focus from data entry to operational readiness."
     ],
   },
   {
     q: "How does the AI ensure seafarer quality?",
     a: [
-      "Built with the logic of a Chief Engineer.",
-      "Cross-references sea-time, engine types, and vessel experience.",
-      "Ranks candidates based on actual technical readiness."
+      "Built with the operational logic of a Chief Engineer — not generic HR software.",
+      "Cross-references sea-time, engine types, and vessel class experience.",
+      "Ranks candidates by actual technical readiness, not just certificate presence."
     ],
   },
   {
@@ -22,7 +25,7 @@ const faqs = [
     a: [
       "HCI and Crew Complement are the foundation.",
       "Scalable to Technical Management and PMS automation.",
-      "Adaptable for Fleet Safety as digital needs evolve."
+      "Roadmap includes Fleet Safety, ISM compliance tracking, and PMS integration."
     ],
   },
   {
@@ -39,7 +42,7 @@ const faqs = [
     a: [
       "Sits alongside your CMMS or crewing platform via REST and SFTP feeds.",
       "Most pilots connected within 10 working days.",
-      "Integration mapping handled during onboarding."
+      "Integration mapping and data field alignment are fully handled by the 888 team during onboarding."
     ],
   },
   {
@@ -47,7 +50,7 @@ const faqs = [
     a: [
       "AWS infrastructure (EU and US regions available).",
       "Seafarer PII is encrypted at rest and in transit.",
-      "Supports data residency for flag states and EU GDPR."
+      "Supports data residency requirements for EU GDPR and flag state compliance obligations."
     ],
   },
   {
@@ -55,47 +58,58 @@ const faqs = [
     a: [
       "Typical 5–15 vessel fleet is live in 2 weeks.",
       "Begins with a Technical Audit.",
-      "Maps existing certificate inventory to quantify time savings."
+      "Maps your existing certificate inventory to establish a baseline and quantify projected time savings before go-live."
     ],
   },
 ];
 
-const FAQ = () => (
-  <section id="faq" className="py-20 md:py-32">
+const FAQ = () => {
+  const sectionRef = useSectionTracking("faq");
+  
+  return (
+    <section ref={sectionRef} id="faq" className="py-16 md:py-20">
     <div className="container-narrow">
-      <div className="mb-10 max-w-2xl">
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-          Technical Performance &amp; HCI Operations
-        </div>
-        <h2 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
-          <span className="text-gradient">Mission-Ready Deployment</span>{" "}
-          <span className="text-gradient-cyan">Framework.</span>
-        </h2>
+      <div className="mb-14 max-w-2xl">
+        <RevealOnScroll direction="up" delay={0}>
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-primary/10 px-3 py-1 text-xs font-medium tracking-widest uppercase text-cyan-400">
+            Intelligence FAQ
+          </div>
+          <h2 className="font-display text-4xl font-bold leading-tight md:text-5xl">
+            <span className="text-white">Common Questions</span>{" "}
+            <span className="text-gradient-cyan">from Fleet Operators.</span>
+          </h2>
+        </RevealOnScroll>
       </div>
 
-      <div className="glass rounded-2xl px-6 md:px-8">
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="border-white/10 last:border-0">
-              <AccordionTrigger className="text-left font-display text-base font-medium hover:no-underline md:text-lg">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground md:text-base">
-                <ul className="space-y-2 list-none pb-2">
-                  {f.a.map((item, idx) => (
-                    <li key={idx} className="flex gap-2.5 items-start">
-                      <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
+      <RevealOnScroll direction="up" delay={0.1}>
+        <div className="glass-strong rounded-2xl px-6 md:px-8 border border-white/5">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((f, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-white/10 last:border-0">
+                <AccordionTrigger 
+                  className="text-left font-display text-base font-medium hover:no-underline md:text-lg"
+                  onClick={() => trackEvent("faq_item_opened", { question: f.q })}
+                >
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground md:text-base">
+                  <ul className="space-y-2 list-none pb-2">
+                    {f.a.map((item, idx) => (
+                      <li key={idx} className="flex gap-2.5 items-start">
+                        <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </RevealOnScroll>
     </div>
   </section>
 );
+};
 
 export default FAQ;
