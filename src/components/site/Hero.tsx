@@ -51,7 +51,7 @@ const Hero = () => {
 
           <p className="mx-auto mt-6 max-w-2xl text-base text-slate-300">
             Built from the engine room up — by a{" "}
-            <span className="text-cyan-400 font-semibold">Staff Chief Engineer</span>
+            <span className="uppercase tracking-wider text-xs font-semibold text-slate-300">Staff Chief Engineer</span>
             , not a software vendor.
           </p>
 
