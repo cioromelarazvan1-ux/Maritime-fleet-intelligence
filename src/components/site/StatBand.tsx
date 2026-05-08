@@ -13,32 +13,27 @@ const StatBand = () => {
         <div className="glass-strong relative overflow-hidden rounded-3xl p-10 text-center md:p-16">
         <div className="pointer-events-none absolute inset-0 opacity-30" style={{ background: "var(--gradient-cyan)", filter: "blur(80px)" }} />
         <div className="relative">
-          <div className="font-display text-6xl font-semibold leading-none md:text-8xl lg:text-9xl">
-            <CountUp to={92} suffix="%" className="text-gradient-cyan" />
-          </div>
-          <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-            Reduction in manual compliance checks across crewing operations.
-          </p>
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-3 gap-6">
+          <div className="mx-auto grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4 md:gap-6">
             {[
-              { v: 38, suffix: "h", l: "Hours saved per crew rotation" },
-              { v: 99.4, suffix: "%", decimals: 1, l: "Cert capture accuracy" },
-              { v: null, suffix: "", l: "Detentions in pilot fleet" },
+              { value: "16+",    label: "Years sea-going experience behind the platform" },
+              { value: "150+",   label: "STCW certificate types the platform is built to track" },
+              { value: "$10K+",  label: "Cost of a single avoidable port detention" },
+              { value: "2026",   label: "Early access — founding partner cohort open" },
             ].map((m) => (
-              <div key={m.l}>
-                <div className="font-display text-2xl font-semibold text-foreground md:text-3xl">
-                  {m.v !== null ? (
-                    <CountUp to={m.v} suffix={m.suffix} decimals={m.decimals ?? 0} />
-                  ) : (
-                    <span className="text-success">Zero ✓</span>
-                  )}
+              <div key={m.label} className="flex flex-col items-center gap-2">
+                <div className="font-display text-4xl font-semibold text-gradient-cyan md:text-5xl">
+                  {m.value}
                 </div>
-                <div className="mt-1 text-xs text-muted-foreground">{m.l}</div>
+                <div className="text-xs text-muted-foreground leading-snug">{m.label}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-10">
+          <p className="mx-auto mt-10 max-w-2xl text-xs text-slate-500">
+            Pre-launch platform — figures reflect the problem space and founder credentials, not pilot results.
+          </p>
+
+          <div className="mt-8">
             <a
               href="/888-ai-systems-platform-vision.pdf"
               target="_blank"
