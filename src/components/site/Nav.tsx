@@ -38,7 +38,7 @@ const Nav = () => {
         : "bg-transparent"
     }`}>
       <div className="container-narrow mt-4 relative z-50">
-        <nav className={`glass flex items-center justify-between rounded-full px-4 py-2.5 md:px-5 transition-shadow duration-300 bg-[#0A1B2A]/90 border-primary/15 ${
+        <nav className={`glass flex items-center justify-between rounded-full px-4 py-2.5 md:px-5 transition-shadow duration-300 bg-[#0F2538]/90 border-primary/15 ${
           isScrolled
             ? "shadow-[0_8px_30px_-8px_rgba(0,209,255,0.4),_0_12px_24px_-8px_rgba(0,0,0,0.4)]"
             : "shadow-[0_8px_30px_-8px_rgba(0,209,255,0.35)]"
