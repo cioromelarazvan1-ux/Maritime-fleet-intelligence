@@ -25,24 +25,24 @@ const Footer = () => {
         </div>
 
         {/* Tier 2 — Social icons */}
-        <div className="flex items-center justify-center gap-6 mb-8">
+        <div className="flex items-center justify-center gap-4 mb-8">
           <a
             href="https://www.linkedin.com/company/888-ai-systems"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="888 AI Systems on LinkedIn"
-            className="text-slate-300 transition-colors hover:text-cyan-400"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-white/[0.06] text-slate-300 transition-all duration-200 hover:border-primary/50 hover:bg-white/[0.10] hover:text-primary"
           >
-            <Linkedin className="h-5 w-5" />
+            <Linkedin className="h-4 w-4" />
           </a>
           <a
             href="https://www.facebook.com/profile.php?id=61572083986720"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="888 AI Systems on Facebook"
-            className="text-slate-300 transition-colors hover:text-cyan-400"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-white/[0.06] text-slate-300 transition-all duration-200 hover:border-primary/50 hover:bg-white/[0.10] hover:text-primary"
           >
-            <Facebook className="h-5 w-5" />
+            <Facebook className="h-4 w-4" />
           </a>
         </div>
 
@@ -55,7 +55,7 @@ const Footer = () => {
         </p>
 
         {/* Tier 4 — Legal */}
-        <div className="text-center text-xs text-slate-500">
+        <div className="text-center text-xs text-slate-400">
           © 2026 888 AI Systems
           <span className="mx-1.5">·</span>
           <Link to="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
