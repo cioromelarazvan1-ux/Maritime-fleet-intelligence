@@ -48,7 +48,7 @@ const Nav = () => {
               <Anchor className="h-4 w-4" />
             </span>
             <span className="text-foreground">888</span>
-            <span className="text-muted-foreground font-semibold tracking-tight">AI Systems</span>
+            <span className="text-slate-200 font-semibold tracking-tight">AI Systems</span>
           </a>
 
           {/* Desktop Links */}
@@ -79,7 +79,7 @@ const Nav = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Connect on LinkedIn"
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-slate-200 transition-all hover:border-primary/30 hover:bg-white/[0.06] hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="grid h-9 w-9 place-items-center rounded-full border border-primary/15 bg-white/[0.03] text-slate-200 transition-all hover:border-primary/30 hover:bg-white/[0.06] hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 <Linkedin className="h-4 w-4 drop-shadow-[0_0_8px_hsl(191_100%_50%_/_0.3)]" />
               </a>
@@ -88,7 +88,7 @@ const Nav = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="888 AI Systems on Facebook"
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-slate-200 transition-all hover:border-primary/30 hover:bg-white/[0.06] hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="grid h-9 w-9 place-items-center rounded-full border border-primary/15 bg-white/[0.03] text-slate-200 transition-all hover:border-primary/30 hover:bg-white/[0.06] hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 <Facebook className="h-4 w-4 drop-shadow-[0_0_8px_hsl(191_100%_50%_/_0.3)]" />
               </a>

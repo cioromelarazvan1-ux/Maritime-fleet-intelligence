@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container-narrow">
         <div className="w-full h-px bg-slate-700/30 mb-8" />
 
-        {/* Contact + Location — centered above main row */}
+        {/* Tier 1 — Contact + Location */}
         <div className="flex flex-col items-center gap-1.5 mb-8">
           <a
             href="mailto:razvan@888aisystems.com"
@@ -19,19 +19,19 @@ const Footer = () => {
           >
             razvan@888aisystems.com
           </a>
-          <span className="text-[10px] text-slate-500 uppercase tracking-widest">
-            Maritime Hub: Constanța, Romania&nbsp;|&nbsp;Global Operations
+          <span className="text-[10px] text-slate-300 uppercase tracking-widest">
+            Maritime Hub · Constanța, Romania · Global Operations
           </span>
         </div>
 
-        {/* Social links */}
+        {/* Tier 2 — Social icons */}
         <div className="flex items-center justify-center gap-6 mb-8">
           <a
             href="https://www.linkedin.com/company/888-ai-systems"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="888 AI Systems on LinkedIn"
-            className="text-slate-400 transition-colors hover:text-cyan-400"
+            className="text-slate-300 transition-colors hover:text-cyan-400"
           >
             <Linkedin className="h-5 w-5" />
           </a>
@@ -40,17 +40,26 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="888 AI Systems on Facebook"
-            className="text-slate-400 transition-colors hover:text-cyan-400"
+            className="text-slate-300 transition-colors hover:text-cyan-400"
           >
             <Facebook className="h-5 w-5" />
           </a>
         </div>
 
-        <div className="text-center text-[10px] md:text-xs text-slate-500 uppercase tracking-widest font-medium">
-          © 2026 888 AI Systems. Tactical Intelligence for the High Seas. 
-          <span className="mx-1.5 md:mx-2">·</span>
+        {/* Visual separator between Tier 2 and Tier 3 */}
+        <div className="max-w-2xl mx-auto border-t border-slate-700/40 my-6" />
+
+        {/* Tier 3 — Brand stamp */}
+        <p className="text-center text-sm font-medium uppercase tracking-widest text-cyan-400 mb-4">
+          Tactical Intelligence for the High Seas
+        </p>
+
+        {/* Tier 4 — Legal */}
+        <div className="text-center text-xs text-slate-500">
+          © 2026 888 AI Systems
+          <span className="mx-1.5">·</span>
           <Link to="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
-          <span className="mx-1.5 md:mx-2">·</span>
+          <span className="mx-1.5">·</span>
           <button onClick={resetConsent} className="hover:text-cyan-400 transition-colors">Cookie Settings</button>
         </div>
       </div>
