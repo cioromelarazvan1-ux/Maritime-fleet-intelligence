@@ -4,7 +4,7 @@ const TrustStrip = () => (
   <section aria-label="Trusted by" className="border-y border-white/5 py-10 overflow-hidden">
     <div className="container-narrow">
       <p className="mb-7 text-center text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-        Built in compliance with the world's top class societies &amp; flag states
+        Designed around the standards of the world's top class societies &amp; flag states
       </p>
     </div>
 

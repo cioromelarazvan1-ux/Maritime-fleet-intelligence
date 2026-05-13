@@ -153,8 +153,8 @@ const Consultancy = () => {
               Early Access
             </div>
             <h2 className="font-display text-4xl font-bold leading-tight md:text-5xl">
-              <span className="text-white">Secure Your</span>{" "}
-              <span className="text-gradient-cyan">Pilot Slot.</span>
+              <span className="text-white">Become a Founding</span>{" "}
+              <span className="text-gradient-cyan">Fleet Partner.</span>
             </h2>
           </RevealOnScroll>
         </div>
@@ -204,7 +204,7 @@ const Consultancy = () => {
                   {[
                     "Certificate inventory gap analysis",
                     "STCW compliance risk map",
-                    "Estimated time savings calculation",
+                    "Time savings opportunity assessment",
                     "Custom onboarding roadmap"
                   ].map((item, idx) => (
                     <li key={idx} className="flex gap-3 text-sm text-slate-400 items-start">
@@ -370,7 +370,7 @@ const Consultancy = () => {
                       {isSubmitting ? (
                         <><Loader2 className="mr-2 h-6 w-6 animate-spin" /> Sending...</>
                       ) : (
-                        "Request Early Access →"
+                        "Apply to be a Founding Partner →"
                       )}
                     </Button>
                   </form>

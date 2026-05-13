@@ -14,7 +14,7 @@ const steps = [
     body: (
       <ul className="mt-2 space-y-1 text-xs text-muted-foreground list-none sm:text-sm">
         <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />Scans global databases &amp; incoming CVs.</li>
-        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />Targets niches: Cruise, Expedition, Ferries, LPG, Container.</li>
+        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />Specialised in: Cruise, Expedition, Ferries, LPG, Container.</li>
       </ul>
     ),
   },
@@ -28,7 +28,7 @@ const steps = [
     body: (
       <ul className="mt-2 space-y-1 text-xs text-muted-foreground list-none sm:text-sm">
         <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-success/60" />Instant STCW &amp; Medical fitness cross-checks.</li>
-        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-success/60" />Live Flag State endorsement verification.</li>
+        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-success/60" />Real-time Flag State endorsement verification.</li>
       </ul>
     ),
   },
@@ -56,7 +56,7 @@ const steps = [
     body: (
       <ul className="mt-2 space-y-1 text-xs text-muted-foreground list-none sm:text-sm">
         <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/60" />Direct integration with leading crewing platforms — COMPAS, Adonis, ShipNet.</li>
-        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/60" />Automates contract generation &amp; embarkation.</li>
+        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/60" />Automates contract generation &amp; embarkation paperwork.</li>
       </ul>
     ),
   },

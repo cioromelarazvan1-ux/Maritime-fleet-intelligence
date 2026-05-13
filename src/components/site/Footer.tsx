@@ -1,4 +1,4 @@
-import { Anchor } from "lucide-react";
+import { Anchor, Linkedin, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
 
@@ -22,6 +22,28 @@ const Footer = () => {
           <span className="text-[10px] text-slate-500 uppercase tracking-widest">
             Maritime Hub: Constanța, Romania&nbsp;|&nbsp;Global Operations
           </span>
+        </div>
+
+        {/* Social links */}
+        <div className="flex items-center justify-center gap-6 mb-8">
+          <a
+            href="https://www.linkedin.com/company/888-ai-systems"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="888 AI Systems on LinkedIn"
+            className="text-slate-400 transition-colors hover:text-cyan-400"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61572083986720"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="888 AI Systems on Facebook"
+            className="text-slate-400 transition-colors hover:text-cyan-400"
+          >
+            <Facebook className="h-5 w-5" />
+          </a>
         </div>
 
         <div className="text-center text-[10px] md:text-xs text-slate-500 uppercase tracking-widest font-medium">

@@ -75,8 +75,11 @@ const BeyondCrewing = () => {
 
       {/* Footer text and CTA */}
       <div className="mt-16 flex flex-col items-center text-center">
+        <p className="mb-6 text-xs uppercase tracking-wider text-slate-400">
+          On the roadmap — capabilities currently in vision stage.
+        </p>
         <p className="mb-8 text-sm font-medium tracking-wide text-slate-500">
-          All modules connect to the same fleet intelligence layer. One system. Full visibility.
+          All modules connect to the same Fleet Intelligence Layer. One system. Full visibility.
         </p>
 
       </div>

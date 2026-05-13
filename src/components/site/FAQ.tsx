@@ -7,9 +7,9 @@ const faqs = [
   {
     q: "How much time will my crewing team actually save?",
     a: [
-      "Automates CV parsing and certificate verification.",
-      "Reduces manual administrative tasks by up to 80% — based on pilot fleet benchmarks.",
-      "Shifts focus from data entry to operational readiness."
+      "Automates CV parsing and certificate verification end-to-end.",
+      "Replaces manual data entry, expiry tracking, and cross-checking with intelligent workflows.",
+      "Specific time savings are quantified for each pilot partner during the technical audit at onboarding."
     ],
   },
   {
@@ -23,8 +23,8 @@ const faqs = [
   {
     q: "Is this limited to crewing and recruitment?",
     a: [
-      "HCI and Crew Complement are the foundation.",
-      "Scalable to Technical Management and PMS automation.",
+      "Crew compliance and crew complement are the foundation — where we start.",
+      "Built to scale into Technical Management and PMS automation.",
       "Roadmap includes Fleet Safety, ISM compliance tracking, and PMS integration."
     ],
   },
@@ -41,7 +41,7 @@ const faqs = [
     q: "Will it integrate with our existing crewing system (COMPAS, Adonis, ShipNet)?",
     a: [
       "Sits alongside your CMMS or crewing platform via REST and SFTP feeds.",
-      "Most pilots connected within 10 working days.",
+      "Designed for connection within 10 working days for typical fleet integrations.",
       "Integration mapping and data field alignment are fully handled by the 888 team during onboarding."
     ],
   },
@@ -56,7 +56,7 @@ const faqs = [
   {
     q: "How long is onboarding?",
     a: [
-      "Typical 5–15 vessel fleet is live in 2 weeks.",
+      "Designed for a 5–15 vessel fleet to go live in approximately 2 weeks.",
       "Begins with a Technical Audit.",
       "Maps your existing certificate inventory to establish a baseline and quantify projected time savings before go-live."
     ],
