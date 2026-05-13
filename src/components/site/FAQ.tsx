@@ -38,7 +38,7 @@ const faqs = [
     ],
   },
   {
-    q: "Will it integrate with our existing crewing system (Compas, OCS, ShipNet)?",
+    q: "Will it integrate with our existing crewing system (COMPAS, Adonis, ShipNet)?",
     a: [
       "Sits alongside your CMMS or crewing platform via REST and SFTP feeds.",
       "Most pilots connected within 10 working days.",

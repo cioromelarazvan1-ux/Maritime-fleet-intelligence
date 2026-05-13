@@ -1,34 +1,6 @@
 import { motion } from "framer-motion";
-import { Settings, ShieldAlert, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
-
-const modules = [
-  {
-    icon: Settings,
-    title: "Technical Management",
-    body: "Agentic workflows for PMS optimization and technical audits.",
-    color: "text-primary",
-    bg: "bg-primary/10",
-    border: "border-primary/20",
-  },
-  {
-    icon: ShieldAlert,
-    title: "Operational Safety",
-    body: "Real-time compliance monitoring and ISM/MLC 2006 integration.",
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/20",
-    border: "border-cyan-500/20",
-  },
-  {
-    icon: LineChart,
-    title: "Vessel Performance",
-    body: "AI-driven data analysis for engine room and deck efficiency.",
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/20",
-    border: "border-cyan-500/20",
-  },
-];
 
 const StrategicGap = () => (
   <section id="vision" className="py-16 md:py-24">
@@ -50,37 +22,6 @@ const StrategicGap = () => (
         </RevealOnScroll>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
-        {modules.map((m, i) => (
-          <RevealOnScroll key={m.title} direction="up" delay={0.1 * i} className="h-full">
-            <div className={`glass relative overflow-hidden rounded-2xl border-t border-t-white/10 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t hover:border-t-primary/30 h-full`}>
-            {/* Modular connection nodes */}
-            <div className="absolute -top-1 right-6 flex gap-1 opacity-50">
-              <div className="h-2 w-1.5 rounded-b-sm bg-white/20" />
-              <div className="h-2 w-1.5 rounded-b-sm bg-white/20" />
-              <div className="h-2 w-1.5 rounded-b-sm bg-white/20" />
-            </div>
-
-            <div className={`mb-4 grid h-10 w-10 place-items-center rounded-lg border ${m.border} ${m.bg} ${m.color}`}>
-              <m.icon className="h-5 w-5" />
-            </div>
-
-            <h3 className="font-display text-lg font-semibold text-foreground">
-              {m.title}
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {m.body}
-            </p>
-            
-            <div className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-background/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-              <div className="h-1.5 w-1.5 rounded-full bg-primary/60" />
-              EARLY ACCESS Q4 2026
-            </div>
-          </div>
-          </RevealOnScroll>
-        ))}
-      </div>
-
       <div className="mt-16 text-center">
         <Button
           variant="outline"
@@ -96,3 +37,4 @@ const StrategicGap = () => (
 );
 
 export default StrategicGap;
+

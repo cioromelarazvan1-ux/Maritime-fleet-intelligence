@@ -17,7 +17,7 @@ interface Profile {
 
 const PROFILES: Profile[] = [
   {
-    name: "Carlos J. Martinez",
+    name: "Sample Crew Profile A",
     nationality: "Philippines",
     rank: "Chief Engineer",
     expiry: "14 Nov 2026",
@@ -25,7 +25,7 @@ const PROFILES: Profile[] = [
     message: "Document parsed successfully — all STCW endorsements verified"
   },
   {
-    name: "Andrei Popescu",
+    name: "Sample Crew Profile B",
     nationality: "Romania",
     rank: "Second Engineer",
     expiry: "14 Dec 2025",
@@ -222,7 +222,7 @@ const DocumentParseDemo = () => {
                 <div className="space-y-2 p-5">
                   <div className="flex items-center gap-2">
                     <FileText className="h-4 w-4 text-secondary" />
-                    <div className="text-xs font-medium text-muted-foreground">passport_seafarer_{currentProfile.name.split(' ').pop()}.pdf</div>
+                    <div className="text-xs font-medium text-muted-foreground">passport_seafarer_sample_{profileIndex % PROFILES.length === 0 ? "a" : "b"}.pdf</div>
                   </div>
                   {[80, 60, 70, 45].map((w, i) => (
                     <div key={i} className="h-1.5 rounded-full bg-white/10" style={{ width: `${w}%` }} />

@@ -55,7 +55,7 @@ const steps = [
     title: "Smart Deployment",
     body: (
       <ul className="mt-2 space-y-1 text-xs text-muted-foreground list-none sm:text-sm">
-        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/60" />Seamless crew management software integration.</li>
+        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/60" />Direct integration with leading crewing platforms — COMPAS, Adonis, ShipNet.</li>
         <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/60" />Automates contract generation &amp; embarkation.</li>
       </ul>
     ),

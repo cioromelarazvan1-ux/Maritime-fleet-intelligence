@@ -116,8 +116,13 @@ const BentoGrid = () => {
         </div>
       </div>
 
+      {/* Cross-agent label */}
+      <p className="mt-5 mb-3 text-center text-xs uppercase tracking-wider text-slate-400">
+        Across all three agents:
+      </p>
+
       {/* STCW Expiry Radar — full-width bottom tile */}
-      <div className={tile + " mt-5"}>
+      <div className={tile}>
         <RevealOnScroll direction="up" delay={0.4}>
           <div className="grid grid-cols-1 gap-6 p-6 md:grid-cols-[auto,1fr,auto] md:items-center">
         <div className="grid h-12 w-12 place-items-center rounded-lg bg-cyan-500/15 text-cyan-400">

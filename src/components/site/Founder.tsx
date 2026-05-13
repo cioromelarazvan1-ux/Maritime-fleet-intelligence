@@ -169,10 +169,6 @@ const Founder = () => (
                   </footer>
                 </blockquote>
 
-                {/* Signature */}
-                <div className="mt-8 border-t border-white/8 pt-6">
-                  <span className="font-display text-base italic text-foreground/80">— R. Cioromela</span>
-                </div>
               </div>
               </RevealOnScroll>
             </div>
