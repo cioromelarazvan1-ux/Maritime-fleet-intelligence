@@ -16,7 +16,7 @@ const StrategicGap = () => (
           </h2>
           <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground list-none md:text-lg">
             <li className="flex gap-2"><div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Add capabilities as your fleet grows — no rip-and-replace.</li>
-            <li className="flex gap-2"><div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Planned Maintenance and crewing unified in one system.</li>
+            <li className="flex gap-2"><div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Planned maintenance and crewing unified in one system.</li>
             <li className="flex gap-2"><div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Every vessel, every update, in real time.</li>
           </ul>
         </RevealOnScroll>

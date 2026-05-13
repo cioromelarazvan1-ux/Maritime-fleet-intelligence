@@ -50,7 +50,7 @@ const BeyondCrewing = () => {
           The Bigger Picture
         </div>
         <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl mb-4">
-          <span className="text-white">Crewing is where we start.</span>
+          <span className="text-white">Crewing is where we </span><span className="text-gradient-cyan">start.</span>
           <span className="block mt-3 text-xl font-medium text-cyan-400 md:text-2xl">Because every vessel, every department and every challenge deserves better tools.</span>
         </h2>
         <p className="mx-auto max-w-2xl text-slate-400 md:text-lg">

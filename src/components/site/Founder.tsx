@@ -63,7 +63,7 @@ const Founder = () => (
                   <h3 className="font-display text-2xl font-bold text-white mb-1">Razvan Cioromela</h3>
                   <div className="text-sm font-medium text-primary mb-1">Founder — 888 AI Systems</div>
                   <div className="text-xs text-slate-400 mb-3">Staff Chief Engineer, CoC Unlimited</div>
-                  <div className="text-[10px] text-slate-500 uppercase tracking-tighter flex items-center justify-center gap-1.5 opacity-80">
+                  <div className="text-[10px] text-slate-400 uppercase tracking-tighter flex items-center justify-center gap-1.5 opacity-80">
                     <span>16+ years</span>
                     <span className="h-1 w-1 rounded-full bg-slate-700" />
                     <span>Cruise</span>
@@ -155,7 +155,7 @@ const Founder = () => (
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                    <span><strong className="text-foreground font-medium">Operational Intelligence:</strong> Automates CV parsing and STCW compliance so Crewing teams focus on vessel deployment, not data entry.</span>
+                    <span><strong className="text-foreground font-medium">Operational Intelligence:</strong> Automates CV parsing and STCW compliance so crewing teams focus on vessel deployment, not data entry.</span>
                   </li>
                 </ul>
 

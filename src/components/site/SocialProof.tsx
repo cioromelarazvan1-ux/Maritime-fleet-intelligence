@@ -6,19 +6,19 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const dataCards = [
   {
-    eyebrow: "THE DETENTION REALITY",
+    eyebrow: "DETENTION REALITY",
     stat: "4.03%",
     body: "Port State Control detention rate across the Paris MoU region in 2024 — up from 3.81% the year before. Crew-related and certificate deficiencies remain among the most cited inspection findings.",
     source: "Paris MoU 2024 Annual Report",
   },
   {
-    eyebrow: "THE DOCUMENTATION REALITY",
+    eyebrow: "DOCUMENTATION REALITY",
     stat: "2,327",
     body: "The number of times 'Certificate & Documentation' was logged as a deficiency in 2024 Mediterranean MoU inspections — the single largest deficiency category. Year-over-year detentions rose 20%.",
     source: "Mediterranean MoU 2024 Annual Report",
   },
   {
-    eyebrow: "THE WORKFORCE REALITY",
+    eyebrow: "WORKFORCE REALITY",
     stat: "89,510",
     body: "Additional STCW-certified officers projected to be needed by 2026 to operate today's 74,000+ vessel world fleet. Compliance complexity is growing faster than the workforce.",
     source: "BIMCO/ICS Seafarer Workforce Report",

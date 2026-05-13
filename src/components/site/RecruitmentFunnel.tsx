@@ -14,7 +14,7 @@ const steps = [
     body: (
       <ul className="mt-2 space-y-1 text-xs text-muted-foreground list-none sm:text-sm">
         <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />Scans global databases &amp; incoming CVs.</li>
-        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />Specialised in: Cruise, Expedition, Ferries, LPG, Container.</li>
+        <li className="flex gap-2"><div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />Built for every commercial vessel class — from tankers and gas carriers to cruise, offshore, and beyond.</li>
       </ul>
     ),
   },
@@ -133,7 +133,7 @@ const RecruitmentFunnel = () => {
         transition={{ duration: 0.6, delay: 0.5 }}
         className="mt-8 text-center text-xs text-muted-foreground/60"
       >
-        Average end-to-end processing time: <span className="text-primary font-medium">under 90 seconds per CV</span>
+        Designed for end-to-end processing <span className="text-primary font-medium">under 90 seconds per CV</span>
       </motion.p>
     </div>
   </section>
