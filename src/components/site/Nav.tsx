@@ -15,7 +15,7 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 80);
+    const handleScroll = () => setIsScrolled(window.scrollY > 8);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -33,8 +33,8 @@ const Nav = () => {
 
   return (
     <header className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "bg-background/90 backdrop-blur-md border-b border-primary/20" 
+      isScrolled
+        ? "bg-background/90 backdrop-blur-md shadow-[0_4px_20px_-4px_rgba(0,0,0,0.35)]"
         : "bg-transparent"
     }`}>
       <div className="container-narrow mt-4 relative z-50">
@@ -150,6 +150,8 @@ const Nav = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* Static teal hairline */}
+      <div className="h-px w-full bg-primary/30" />
     </header>
   );
 };
