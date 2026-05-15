@@ -19,7 +19,7 @@ const Footer = () => {
           >
             razvan@888aisystems.com
           </a>
-          <span className="text-[10px] text-slate-300 uppercase tracking-widest">
+          <span className="text-[10px] text-slate-300 uppercase tracking-wide md:tracking-widest">
             Maritime Hub · Constanța, Romania · Global Operations
           </span>
         </div>
@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="max-w-2xl mx-auto border-t border-slate-700/40 my-6" />
 
         {/* Tier 3 — Brand stamp */}
-        <p className="text-center text-sm font-medium uppercase tracking-widest text-cyan-400 mb-4">
+        <p className="text-center text-sm font-medium uppercase tracking-wider md:tracking-widest text-cyan-400 mb-4">
           Tactical Intelligence for the High Seas
         </p>
 
