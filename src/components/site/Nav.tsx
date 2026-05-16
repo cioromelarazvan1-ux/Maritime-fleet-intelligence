@@ -1,5 +1,6 @@
 import { Anchor, Facebook, Linkedin, Menu, X, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { trackEvent } from "@/lib/analytics";
 
@@ -48,7 +49,7 @@ const Nav = () => {
               <Anchor className="h-4 w-4" />
             </span>
             <span className="text-foreground">888</span>
-            <span className="text-slate-200 font-semibold tracking-tight">AI Systems</span>
+            <span className="hidden md:inline text-slate-200 font-semibold tracking-tight">AI Systems</span>
           </a>
 
           {/* Desktop Links */}
@@ -67,7 +68,7 @@ const Nav = () => {
             <a
               href="#contact"
               onClick={() => trackEvent("navbar_book_demo_clicked")}
-              className="rounded-full bg-primary px-3 py-1.5 md:px-5 md:py-2 text-[13px] md:text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary shadow-[0_0_15px_rgba(0,209,255,0.2)]"
+              className="hidden md:inline-flex rounded-full bg-primary px-3 py-1.5 md:px-5 md:py-2 text-[13px] md:text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary shadow-[0_0_15px_rgba(0,209,255,0.2)]"
             >
               Book a Demo
             </a>
@@ -110,50 +111,61 @@ const Nav = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md lg:hidden overflow-hidden"
-          >
-            <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-display">
-              {links.map((l) => (
+      {/* Mobile Menu Overlay — portaled to document.body to escape the
+           header's backdrop-blur stacking context */}
+      {createPortal(
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md lg:hidden overflow-hidden"
+            >
+              <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-display">
+                {links.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-muted-foreground transition-colors hover:text-primary active:text-primary"
+                  >
+                    {l.label}
+                  </a>
+                ))}
                 <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-muted-foreground transition-colors hover:text-primary active:text-primary"
+                  href="#contact"
+                  onClick={() => { trackEvent("navbar_book_demo_clicked"); setIsMenuOpen(false); }}
+                  className="rounded-full bg-primary px-8 py-3 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 shadow-[0_0_15px_rgba(0,209,255,0.2)]"
                 >
-                  {l.label}
+                  Book a Demo
                 </a>
-              ))}
-              <div className="flex items-center gap-6 mt-8">
-                <a
-                  href="https://www.linkedin.com/company/121104167"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Connect on LinkedIn"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  <Linkedin className="h-8 w-8" />
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61572083986720"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="888 AI Systems on Facebook"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  <Facebook className="h-8 w-8" />
-                </a>
+                <div className="flex items-center gap-6 mt-4">
+                  <a
+                    href="https://www.linkedin.com/company/121104167"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect on LinkedIn"
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    <Linkedin className="h-8 w-8" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61572083986720"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="888 AI Systems on Facebook"
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    <Facebook className="h-8 w-8" />
+                  </a>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </header>
   );
 };
