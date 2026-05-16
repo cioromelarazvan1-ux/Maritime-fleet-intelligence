@@ -365,7 +365,7 @@ const Consultancy = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full rounded-full bg-cyan-500 text-black hover:bg-cyan-400 px-8 py-8 min-h-[4rem] text-lg font-bold leading-tight transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                      className="w-full rounded-full bg-cyan-500 text-black hover:bg-cyan-400 px-8 py-8 min-h-[4rem] text-sm md:text-lg font-bold leading-tight transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)]"
                     >
                       {isSubmitting ? (
                         <><Loader2 className="mr-2 h-6 w-6 animate-spin" /> Sending...</>
