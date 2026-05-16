@@ -44,12 +44,12 @@ const Nav = () => {
             ? "shadow-[0_8px_30px_-8px_rgba(0,209,255,0.4),_0_12px_24px_-8px_rgba(0,0,0,0.4)]"
             : "shadow-[0_8px_30px_-8px_rgba(0,209,255,0.35)]"
         }`}>
-          <a href="/"className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
+          <a href="/" className="flex items-center gap-1.5 md:gap-2 font-display text-sm md:text-lg font-semibold tracking-tight">
             <span className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground">
               <Anchor className="h-4 w-4" />
             </span>
             <span className="text-foreground">888</span>
-            <span className="hidden md:inline text-slate-200 font-semibold tracking-tight">AI Systems</span>
+            <span className="text-slate-200 font-semibold tracking-tight">AI Systems</span>
           </a>
 
           {/* Desktop Links */}
