@@ -63,18 +63,18 @@ const Founder = () => (
                   <h3 className="font-display text-2xl font-bold text-white mb-1">Razvan Cioromela</h3>
                   <div className="text-sm font-medium text-primary mb-1">Founder — 888 AI Systems</div>
                   <div className="text-xs text-slate-400 mb-3">Staff Chief Engineer, CoC Unlimited</div>
-                  <div className="text-[10px] text-slate-400 uppercase tracking-tighter flex items-center justify-center gap-1.5 opacity-80">
-                    <span>16+ years</span>
+                  <div className="text-[10px] uppercase tracking-tighter flex items-center justify-center gap-1.5 opacity-80">
+                    <span className="text-primary">16+ years</span>
                     <span className="h-1 w-1 rounded-full bg-slate-700" />
-                    <span>Cruise</span>
+                    <span className="text-slate-300">Cruise</span>
                     <span className="h-1 w-1 rounded-full bg-slate-700" />
-                    <span>LPG</span>
+                    <span className="text-slate-300">LPG</span>
                     <span className="h-1 w-1 rounded-full bg-slate-700" />
-                    <span>Expedition</span>
+                    <span className="text-slate-300">Expedition</span>
                     <span className="h-1 w-1 rounded-full bg-slate-700" />
-                    <span>Container</span>
+                    <span className="text-slate-300">Container</span>
                     <span className="h-1 w-1 rounded-full bg-slate-700" />
-                    <span>Ferries</span>
+                    <span className="text-slate-300">Ferries</span>
                   </div>
                   
                   {/* Action Buttons */}
@@ -94,7 +94,7 @@ const Founder = () => (
                         href="https://linkedin.com/in/razvan-cioromela-734067129/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition-colors hover:text-white"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-white border-b border-primary/40 hover:border-primary pb-0.5"
                         onClick={() => trackEvent("founder_linkedin_clicked")}
                       >
                         <Linkedin className="h-3.5 w-3.5" />
