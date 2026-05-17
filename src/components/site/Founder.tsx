@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { Cog, Linkedin } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
@@ -144,12 +144,12 @@ const Founder = () => (
                 </p>
 
                 {/* Bio bullet points */}
-                <ul className="space-y-4 text-[15px] leading-relaxed text-muted-foreground md:text-base list-none mb-8">
-                  <li className="flex gap-3 items-start">
-                    <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                    <span><strong className="text-foreground font-medium">What's live today:</strong> Automated certificate intelligence and STCW compliance — built to free crewing teams from manual document handling, not to replace them.</span>
-                  </li>
-                </ul>
+                <div className="mb-8 rounded-xl border border-cyan-400/10 bg-slate-800/30 p-4 md:p-5">
+                  <div className="flex items-start gap-3 text-[15px] leading-relaxed text-slate-300 md:text-base">
+                    <Cog className="mt-1 h-4 w-4 shrink-0 opacity-70" />
+                    <span><strong className="font-bold text-primary">What's live today:</strong> Automated certificate intelligence and STCW compliance — built to free crewing teams from manual document handling, not to replace them.</span>
+                  </div>
+                </div>
 
                 {/* Upgraded Vision Box */}
                 <blockquote className="mt-4 border-l-4 border-primary pl-5 py-2">
