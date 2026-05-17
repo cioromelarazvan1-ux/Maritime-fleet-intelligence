@@ -147,22 +147,14 @@ const Founder = () => (
                 <ul className="space-y-4 text-[15px] leading-relaxed text-muted-foreground md:text-base list-none mb-8">
                   <li className="flex gap-3 items-start">
                     <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                    <span><strong className="text-foreground font-medium">Engine-Room Origins:</strong> Founded by Razvan Cioromela, Staff Chief Engineer with 16+ years across Cruise, Expedition, LPG, Container, and Ferries.</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                    <span><strong className="text-foreground font-medium">Human-Machine Integration:</strong> Bridging deep technical sea-service with cutting-edge Agentic AI.</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                    <span><strong className="text-foreground font-medium">Operational Intelligence:</strong> Automates CV parsing and STCW compliance so crewing teams focus on vessel deployment, not data entry.</span>
+                    <span><strong className="text-foreground font-medium">What's live today:</strong> Automated certificate intelligence and STCW compliance — built to free crewing teams from manual document handling, not to replace them.</span>
                   </li>
                 </ul>
 
                 {/* Upgraded Vision Box */}
                 <blockquote className="mt-4 border-l-4 border-primary pl-5 py-2">
                   <p className="text-base md:text-lg font-medium text-white leading-relaxed">
-                    "Our roadmap extends beyond crewing — into predictive maintenance, performance analytics, and fleet-wide workforce intelligence. 888 AI Systems is being built as the operating layer for the next generation of ship management."
+                    "Our roadmap extends beyond crewing — into predictive maintenance, performance analytics, and fleet-wide workforce intelligence. 888 AI Systems is being built as the operating layer for how maritime fleets will be managed in the AI-driven future."
                   </p>
                   <footer className="mt-3 text-xs tracking-widest uppercase text-slate-500 font-semibold">
                     — Strategic Roadmap
