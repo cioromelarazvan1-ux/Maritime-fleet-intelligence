@@ -139,10 +139,20 @@ const DocumentParseDemo = () => {
 
   return (
     <div
-      className="group relative h-full"
+      className="group relative h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-2xl"
       role="button"
       tabIndex={0}
       onClick={phase === "idle" ? start : undefined}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (phase === "idle") {
+            start();
+          } else if (phase === "validated") {
+            runAgain();
+          }
+        }
+      }}
       aria-label="Run document parsing demo"
     >
       {/* Live Demo Pill */}

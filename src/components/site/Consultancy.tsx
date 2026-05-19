@@ -139,7 +139,7 @@ const Consultancy = () => {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-16 md:pt-28 md:pb-12 bg-[#030711] relative overflow-hidden">
+    <section ref={sectionRef} id="contact" className="py-16 md:pt-28 md:pb-12 bg-slate-950 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full" />
@@ -271,9 +271,9 @@ const Consultancy = () => {
                           }
                         }}
                         onChange={e => setFormData(f => ({ ...f, full_name: e.target.value }))}
-                        className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.full_name ? "border-amber-500/50 bg-amber-500/5" : ""}`}
+                        className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.full_name ? "border-warning/50 bg-warning/10" : ""}`}
                       />
-                      {errors.full_name && <p className="text-amber-500 text-xs mt-1 font-medium">{errors.full_name}</p>}
+                      {errors.full_name && <p className="text-warning text-xs mt-1 font-medium">{errors.full_name}</p>}
                     </div>
 
                     <div className="space-y-2">
@@ -284,9 +284,9 @@ const Consultancy = () => {
                         placeholder="you@companyname.com"
                         value={formData.email}
                         onChange={e => setFormData(f => ({ ...f, email: e.target.value }))}
-                        className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.email ? "border-amber-500/50 bg-amber-500/5" : ""}`}
+                        className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.email ? "border-warning/50 bg-warning/10" : ""}`}
                       />
-                      {errors.email && <p className="text-amber-500 text-xs mt-1 font-medium">{errors.email}</p>}
+                      {errors.email && <p className="text-warning text-xs mt-1 font-medium">{errors.email}</p>}
                     </div>
 
                     <div className="space-y-2">
@@ -296,9 +296,9 @@ const Consultancy = () => {
                         placeholder="e.g. Thome Ship Management, Wallem Group"
                         value={formData.company}
                         onChange={e => setFormData(f => ({ ...f, company: e.target.value }))}
-                        className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.company ? "border-amber-500/50 bg-amber-500/5" : ""}`}
+                        className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.company ? "border-warning/50 bg-warning/10" : ""}`}
                       />
-                      {errors.company && <p className="text-amber-500 text-xs mt-1 font-medium">{errors.company}</p>}
+                      {errors.company && <p className="text-warning text-xs mt-1 font-medium">{errors.company}</p>}
                     </div>
 
                     <div className="space-y-2">
@@ -307,10 +307,10 @@ const Consultancy = () => {
                         value={formData.fleet_size} 
                         onValueChange={v => setFormData(f => ({ ...f, fleet_size: v }))}
                       >
-                        <SelectTrigger className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.fleet_size ? "border-amber-500/50 bg-amber-500/5" : ""}`}>
+                        <SelectTrigger className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.fleet_size ? "border-warning/50 bg-warning/10" : ""}`}>
                           <SelectValue placeholder="Select fleet size" />
                         </SelectTrigger>
-                        <SelectContent className="bg-[#0A101F] border-white/10 text-white">
+                        <SelectContent className="bg-slate-950 border-white/10 text-white">
                           <SelectItem value="1 — 3 vessels (Pilot)">1 — 3 vessels (Pilot)</SelectItem>
                           <SelectItem value="4 — 10 vessels">4 — 10 vessels</SelectItem>
                           <SelectItem value="11 — 25 vessels">11 — 25 vessels</SelectItem>
@@ -318,7 +318,7 @@ const Consultancy = () => {
                           <SelectItem value="50+ vessels (Enterprise)">50+ vessels (Enterprise)</SelectItem>
                         </SelectContent>
                       </Select>
-                      {errors.fleet_size && <p className="text-amber-500 text-xs mt-1 font-medium">{errors.fleet_size}</p>}
+                      {errors.fleet_size && <p className="text-warning text-xs mt-1 font-medium">{errors.fleet_size}</p>}
                     </div>
 
                     <div className="space-y-3">
@@ -341,7 +341,7 @@ const Consultancy = () => {
                           </div>
                         ))}
                       </div>
-                      {errors.vessel_types && <p className="text-amber-500 text-xs mt-1 font-medium">{errors.vessel_types}</p>}
+                      {errors.vessel_types && <p className="text-warning text-xs mt-1 font-medium">{errors.vessel_types}</p>}
                     </div>
 
                     <div className="space-y-2">
@@ -365,7 +365,7 @@ const Consultancy = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full rounded-full bg-cyan-500 text-black hover:bg-cyan-400 px-8 py-8 min-h-[4rem] text-sm md:text-lg font-bold leading-tight transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                      className="w-full rounded-full bg-cyan-500 text-black hover:bg-cyan-400 px-8 py-8 min-h-[4rem] text-base md:text-lg font-bold leading-tight transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)]"
                     >
                       {isSubmitting ? (
                         <><Loader2 className="mr-2 h-6 w-6 animate-spin" /> Sending...</>

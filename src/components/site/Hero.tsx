@@ -68,16 +68,15 @@ const Hero = () => {
               See How It Works
             </Button>
             <a
-            href="#contact" 
-              
+              href="https://calendly.com/razvan-888aisystems/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/70 font-medium hover:text-white transition-colors duration-200 flex items-center gap-2 group"
-              onClick={(e) => { 
-  e.preventDefault();
-  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              onClick={() => { 
   trackEvent("hero_cta_clicked", { button: "book_a_demo" });
 }}
             >
-             Book a Demo <span className="text-cyan-400 group-hover:translate-x-1 transition-transform duration-200">➜</span> 
+             Book a Call <span className="text-cyan-400 group-hover:translate-x-1 transition-transform duration-200">➜</span> 
             </a>
           </div>
 

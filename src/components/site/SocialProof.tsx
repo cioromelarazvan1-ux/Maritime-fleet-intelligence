@@ -49,7 +49,7 @@ const SocialProof = () => {
         <div className="flex flex-col md:grid md:grid-cols-3 gap-6">
           {dataCards.map((card, i) => (
             <RevealOnScroll key={i} direction="up" delay={0.15 + (i * 0.1)}>
-              <div className="glass-strong flex flex-col rounded-2xl border border-cyan-500/20 border-t-2 border-t-cyan-500 bg-slate-800/50 p-8 h-full">
+              <div className="glass-strong flex flex-col rounded-2xl border border-cyan-500/20 bg-slate-800/50 p-8 h-full">
                 {/* Eyebrow */}
                 <div className="mb-4 text-xs font-medium uppercase tracking-wider text-cyan-400">
                   {card.eyebrow}

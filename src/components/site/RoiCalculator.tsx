@@ -78,7 +78,7 @@ const RoiCalculator = () => {
               icon={ShieldCheck}
               label="Detention risk exposure"
               value={`${data.tierLabel} → Reduced`}
-              suffix={`↓ ${Math.round(data.riskScore)}% with 888 AI`}
+              suffix={`↓ ${Math.round(data.riskScore)}% with 888 AI Systems`}
               accent
             />
             <a

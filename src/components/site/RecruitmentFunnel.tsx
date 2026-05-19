@@ -75,7 +75,7 @@ const RecruitmentFunnel = () => {
             Crew Deployment Pipeline
           </div>
           <h2 className="font-display text-4xl font-bold leading-tight md:text-5xl">
-            <span className="text-gradient">The 888 AI</span>{" "}
+            <span className="text-gradient">The 888 AI Systems</span>{" "}
             <span className="text-gradient-cyan">Crew Deployment Funnel.</span>
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">

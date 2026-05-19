@@ -66,11 +66,13 @@ const Nav = () => {
           {/* Action Area */}
           <div className="flex items-center gap-2 md:gap-4">
             <a
-              href="#contact"
+              href="https://calendly.com/razvan-888aisystems/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => trackEvent("navbar_book_demo_clicked")}
               className="hidden md:inline-flex rounded-full bg-primary px-3 py-1.5 md:px-5 md:py-2 text-[13px] md:text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary shadow-[0_0_15px_rgba(0,209,255,0.2)]"
             >
-              Book a Demo
+              Book a Call
             </a>
 
             {/* Desktop Socials */}
@@ -134,11 +136,13 @@ const Nav = () => {
                   </a>
                 ))}
                 <a
-                  href="#contact"
+                  href="https://calendly.com/razvan-888aisystems/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => { trackEvent("navbar_book_demo_clicked"); setIsMenuOpen(false); }}
                   className="rounded-full bg-primary px-8 py-3 text-base font-medium text-primary-foreground transition-all hover:bg-primary/90 shadow-[0_0_15px_rgba(0,209,255,0.2)]"
                 >
-                  Book a Demo
+                  Book a Call
                 </a>
                 <div className="flex items-center gap-6 mt-4">
                   <a

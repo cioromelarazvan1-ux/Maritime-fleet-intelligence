@@ -24,10 +24,9 @@ const StrategicGap = () => (
 
       <div className="mt-16 text-center">
         <Button
-          variant="outline"
           size="lg"
           asChild
-          className="rounded-full border-primary/30 px-10 py-6 font-medium transition-all hover:bg-primary/10 hover:border-primary/50"
+          className="rounded-full bg-primary px-10 py-6 font-medium text-primary-foreground transition-all hover:bg-primary/90 shadow-[0_0_15px_rgba(0,209,255,0.2)]"
         >
           <a href="#contact">Join the Early Access List →</a>
         </Button>
