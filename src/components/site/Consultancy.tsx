@@ -19,7 +19,6 @@ import { useSectionTracking } from "@/hooks/useSectionTracking";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const VESSEL_TYPES = ["Tanker", "LNG/LPG", "Bulk Carrier", "Container", "Offshore", "Cruise", "Ferry", "Other"];
-const FREE_EMAIL_DOMAINS = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "live.com", "icloud.com"];
 
 const Consultancy = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,12 +48,7 @@ const Consultancy = () => {
     
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid work email address.";
-    } else {
-      const domain = formData.email.split("@")[1]?.toLowerCase();
-      if (FREE_EMAIL_DOMAINS.includes(domain)) {
-        newErrors.email = "Please use your company email address.";
-      }
+      newErrors.email = "Please enter a valid email address.";
     }
     
     if (formData.company.length < 3) {
@@ -281,7 +275,7 @@ const Consultancy = () => {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="you@companyname.com"
+                        placeholder="you@example.com"
                         value={formData.email}
                         onChange={e => setFormData(f => ({ ...f, email: e.target.value }))}
                         className={`bg-white/[0.03] border-white/10 focus:border-cyan-500/50 py-6 ${errors.email ? "border-warning/50 bg-warning/10" : ""}`}
