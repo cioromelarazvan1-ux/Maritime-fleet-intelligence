@@ -28,7 +28,7 @@ const StatBand = () => {
             ))}
           </div>
 
-          <p className="mx-auto mt-10 max-w-2xl text-xs text-slate-500">
+          <p className="mx-auto mt-10 max-w-2xl text-xs text-slate-300">
             Pre-launch platform — figures reflect the problem space and founder credentials, not pilot results.
           </p>
 
