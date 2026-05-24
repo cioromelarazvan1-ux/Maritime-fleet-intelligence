@@ -17,6 +17,7 @@ import {
 import { trackEvent } from "@/lib/analytics";
 import { useSectionTracking } from "@/hooks/useSectionTracking";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import { supabase } from "@/integrations/supabase/client";
 
 const VESSEL_TYPES = ["Tanker", "LNG/LPG", "Bulk Carrier", "Container", "Offshore", "Cruise", "Ferry", "Other"];
 
@@ -102,6 +103,23 @@ const Consultancy = () => {
         });
 
         if (response.ok) {
+          // Secondary write to Supabase — non-blocking, silent failure
+          supabase.from("leads").insert({
+            full_name: formData.full_name,
+            email: formData.email,
+            company: formData.company,
+            fleet_size: formData.fleet_size,
+            vessel_types: formData.vessel_types.join(", "),
+            message: formData.message || null,
+            source: "website_contact_form",
+          }).then(({ error }) => {
+            if (error) {
+              console.error("Supabase secondary write failed:", error.message);
+            } else {
+              console.log("Supabase secondary write succeeded");
+            }
+          });
+
           setSubmittedName(formData.full_name);
           setIsSuccess(true);
           setFormData({
