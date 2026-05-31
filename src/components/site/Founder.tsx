@@ -147,7 +147,7 @@ const Founder = () => (
                 <div className="mb-8 rounded-xl border border-cyan-400/10 bg-slate-800/30 p-4 md:p-5">
                   <div className="flex items-start gap-3 text-[15px] leading-relaxed text-slate-300 md:text-base">
                     <Cog className="mt-1 h-4 w-4 shrink-0 opacity-70" />
-                    <span><strong className="font-bold text-primary">What's live today:</strong> Automated certificate intelligence and STCW compliance — built to free crewing teams from manual document handling, not to replace them.</span>
+                    <span><strong className="font-bold text-primary">What we're building first:</strong> Automated certificate intelligence and STCW compliance — built to free crewing teams from manual document handling, not to replace them.</span>
                   </div>
                 </div>
 

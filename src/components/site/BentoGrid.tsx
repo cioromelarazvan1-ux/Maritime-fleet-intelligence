@@ -10,11 +10,11 @@ const SectionHeader = () => (
       The 888 AI Stack
     </div>
     <h2 className="font-display text-3xl font-bold leading-tight md:text-5xl">
-      <span className="text-gradient">Three agents.</span>{" "}
+      <span className="text-gradient">One platform.</span>{" "}
       <span className="text-gradient-cyan">One compliant fleet.</span>
     </h2>
     <p className="mt-4 text-muted-foreground md:text-lg">
-      One agent live today, two in active development — built together as one platform for maritime crewing, certification, and compliance across every vessel class.
+      Four agents in development — two in active build, two on the roadmap — built together as one platform for maritime crewing, certification, and compliance across every vessel class.
     </p>
   </div>
 );
@@ -22,10 +22,10 @@ const SectionHeader = () => (
 const tile =
   "glass relative overflow-hidden rounded-2xl transition-all duration-500 hover:bg-white/[0.06] hover:-translate-y-1 hover:border-primary/30";
 
-const LiveTag = () => (
+const ActiveBuildTag = () => (
   <div className="inline-flex items-center gap-1.5 rounded-full bg-secondary/15 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-secondary">
     <div className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
-    Live Today
+    Active Build
   </div>
 );
 
@@ -55,7 +55,7 @@ const BentoGrid = () => {
               </div>
               <div>
                 <div className="mb-2 flex items-center gap-2">
-                  <LiveTag />
+                  <ActiveBuildTag />
                 </div>
                 <h3 className="font-display text-lg font-semibold">AI CV & Certificate Intelligence</h3>
                 <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground list-none">
@@ -147,7 +147,7 @@ const BentoGrid = () => {
         </div>
         <div>
           <div className="mb-2">
-            <LiveTag />
+            <ActiveBuildTag />
           </div>
           <h3 className="font-display text-lg font-semibold">STCW &amp; Medical Expiry Radar</h3>
           <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-none">
