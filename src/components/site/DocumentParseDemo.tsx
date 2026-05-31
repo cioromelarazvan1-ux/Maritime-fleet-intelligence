@@ -244,7 +244,7 @@ const DocumentParseDemo = () => {
                 <div className="space-y-2 p-5">
                   <div className="flex items-center gap-2">
                     <FileText className="h-4 w-4 text-secondary" />
-                    <div className="text-xs font-medium text-muted-foreground">passport_seafarer_sample_{profileIndex % PROFILES.length === 0 ? "a" : "b"}.pdf</div>
+                    <div className="text-xs font-medium text-muted-foreground">seafarer_documents_sample_{["a", "b", "c"][profileIndex % PROFILES.length]}.pdf</div>
                   </div>
                   {[80, 60, 70, 45].map((w, i) => (
                     <div key={i} className="h-1.5 rounded-full bg-white/10" style={{ width: `${w}%` }} />
