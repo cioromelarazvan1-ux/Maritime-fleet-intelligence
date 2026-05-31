@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { CheckCircle2, FileText, RotateCcw, ScanLine, Upload, AlertCircle } from "lucide-react";
+import { CheckCircle2, FileText, RotateCcw, ScanLine, Upload, AlertCircle, XCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 
@@ -12,6 +12,7 @@ interface Profile {
   expiry: string;
   status: string;
   isWarning?: boolean;
+  isError?: boolean;
   message: string;
 }
 
@@ -19,19 +20,28 @@ const PROFILES: Profile[] = [
   {
     name: "Sample Crew Profile A",
     nationality: "Philippines",
-    rank: "Chief Engineer",
+    rank: "3rd Engineer",
     expiry: "14 Nov 2026",
-    status: "✅ Compliant",
-    message: "Document parsed successfully — all STCW endorsements verified"
+    status: "✅ Ready to Sail",
+    message: "Document parsed successfully — all certificates verified"
   },
   {
     name: "Sample Crew Profile B",
-    nationality: "Romania",
-    rank: "Second Engineer",
+    nationality: "Greece",
+    rank: "2nd Officer",
     expiry: "14 Dec 2025",
     status: "⚠️ Expiry in 14 days",
     isWarning: true,
     message: "⚠️ STCW CoC expiring in 14 days — recommend immediate renewal"
+  },
+  {
+    name: "Sample Crew Profile C",
+    nationality: "Ukraine",
+    rank: "Cook",
+    expiry: "11 Mar 2026",
+    status: "❌ Expired",
+    isError: true,
+    message: "❌ Food Hygiene Certificate expired — Cook ineligible for galley duties until renewed"
   }
 ];
 
@@ -133,7 +143,7 @@ const DocumentParseDemo = () => {
     { label: "Name", value: currentProfile.name },
     { label: "Nationality", value: currentProfile.nationality },
     { label: "Rank", value: currentProfile.rank },
-    { label: "STCW Expiry", value: currentProfile.expiry },
+    { label: "Certificate Expiry", value: currentProfile.expiry },
     { label: "Status", value: currentProfile.status, isStatus: true },
   ];
 
@@ -170,7 +180,9 @@ const DocumentParseDemo = () => {
         className="absolute inset-0 rounded-2xl"
         animate={{
           boxShadow: isDone
-            ? currentProfile.isWarning 
+            ? currentProfile.isError
+              ? "0 0 0 1px hsl(var(--destructive) / 0.5), 0 0 20px hsl(var(--destructive) / 0.1)"
+              : currentProfile.isWarning
               ? "0 0 0 1px hsl(var(--warning) / 0.5), 0 0 20px hsl(var(--warning) / 0.1)"
               : "0 0 0 1px hsl(var(--success) / 0.5), var(--glow-emerald)"
             : isActive
@@ -188,7 +200,7 @@ const DocumentParseDemo = () => {
               Intelligent Certificate Parsing
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              Our agent extracts seafarer data and validates STCW endorsements in seconds.
+              Our agent extracts seafarer data and validates STCW certificates in seconds.
             </p>
           </div>
           {isDone && (
@@ -218,7 +230,7 @@ const DocumentParseDemo = () => {
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-secondary/15 text-secondary">
                   <Upload className="h-5 w-5" />
                 </div>
-                <div className="text-sm font-medium text-foreground">Drag Seafarer Passport PDF Here</div>
+                <div className="text-sm font-medium text-foreground">Drop your CV and certificates here</div>
                 <div className="text-xs text-muted-foreground italic">System online and listening</div>
               </motion.div>
             ) : (
@@ -261,7 +273,7 @@ const DocumentParseDemo = () => {
                     initial={{ opacity: 0.6 }}
                     animate={{ opacity: 0 }}
                     transition={{ duration: 0.8 }}
-                    style={{ background: currentProfile.isWarning ? "hsl(var(--warning) / 0.25)" : "hsl(var(--success) / 0.25)" }}
+                    style={{ background: currentProfile.isError ? "hsl(var(--destructive) / 0.25)" : currentProfile.isWarning ? "hsl(var(--warning) / 0.25)" : "hsl(var(--success) / 0.25)" }}
                   />
                 )}
               </motion.div>
@@ -274,7 +286,9 @@ const DocumentParseDemo = () => {
           <div className="mb-2 flex items-center justify-between text-xs">
             <div className="flex items-center gap-1.5 text-muted-foreground">
               {isDone ? (
-                currentProfile.isWarning ? (
+                currentProfile.isError ? (
+                  <XCircle className="h-3.5 w-3.5 text-destructive" />
+                ) : currentProfile.isWarning ? (
                   <AlertCircle className="h-3.5 w-3.5 text-warning" />
                 ) : (
                   <CheckCircle2 className="h-3.5 w-3.5 text-success" />
@@ -285,7 +299,7 @@ const DocumentParseDemo = () => {
                   <span className={`relative inline-flex rounded-full h-2 w-2 ${isActive ? "bg-primary" : "bg-slate-500"}`}></span>
                 </div>
               )}
-              <span className={isDone ? (currentProfile.isWarning ? "text-warning" : "text-success") : "text-muted-foreground"}>
+              <span className={isDone ? (currentProfile.isError ? "text-destructive" : currentProfile.isWarning ? "text-warning" : "text-success") : "text-muted-foreground"}>
                 {STATUS_TEXT[phase]}
               </span>
             </div>
@@ -300,7 +314,7 @@ const DocumentParseDemo = () => {
               transition={{ duration: 0.2 }}
               style={{
                 background: isDone 
-                  ? currentProfile.isWarning ? "hsl(var(--warning))" : "var(--gradient-lavender-emerald)" 
+                  ? currentProfile.isError ? "hsl(var(--destructive))" : currentProfile.isWarning ? "hsl(var(--warning))" : "var(--gradient-lavender-emerald)" 
                   : "var(--gradient-lavender-cyan)",
               }}
             />
@@ -352,7 +366,9 @@ const DocumentParseDemo = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className={`mt-4 rounded-lg px-3 py-2 text-xs font-medium text-center border ${
-                currentProfile.isWarning 
+                currentProfile.isError
+                  ? "bg-destructive/10 border-destructive/20 text-destructive"
+                  : currentProfile.isWarning 
                   ? "bg-warning/10 border-warning/20 text-warning" 
                   : "bg-success/10 border-success/20 text-success"
               }`}
